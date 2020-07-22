@@ -1,11 +1,11 @@
 Summary:	Screen saver and locker for Xfce
 Name:		xfce4-screensaver
-Version:	0.1.8
+Version:	0.1.10
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/apps/xfce4-screensaver/0.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	0fea7b676e6e533a3f305c6f642fe0cd
+# Source0-md5:	1f093cde5af09e9fd9be017774e032ef
 URL:		https://docs.xfce.org/apps/screensaver/start
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -14,6 +14,7 @@ BuildRequires:	gettext-tools
 BuildRequires:	intltool
 BuildRequires:	libsoup-devel >= 2.26.0
 BuildRequires:	libtool
+BuildRequires:	pam-devel
 BuildRequires:	pkgconfig
 BuildRequires:	xfce4-dev-tools >= 4.14.0
 BuildRequires:	xfce4-panel-devel >= 4.14.0
@@ -44,6 +45,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/hy_AM
 
 %find_lang %{name}
 
