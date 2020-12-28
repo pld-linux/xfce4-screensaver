@@ -1,11 +1,11 @@
 Summary:	Screen saver and locker for Xfce
 Name:		xfce4-screensaver
-Version:	0.1.10
+Version:	0.1.11
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/apps/xfce4-screensaver/0.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	1f093cde5af09e9fd9be017774e032ef
+# Source0-md5:	98864132b806dd39ab1adbfc30b22e93
 URL:		https://docs.xfce.org/apps/screensaver/start
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -18,6 +18,7 @@ BuildRequires:	pam-devel
 BuildRequires:	pkgconfig
 BuildRequires:	xfce4-dev-tools >= 4.14.0
 BuildRequires:	xfce4-panel-devel >= 4.14.0
+BuildRequires:	xorg-lib-libXScrnSaver-devel
 Requires:	xfce4-dirs >= 4.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/hy_AM
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/hy_AM
 
 %find_lang %{name}
 
@@ -57,8 +58,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README.md TODO
 %config(noreplace) %verify(not md5 mtime size) /etc/pam.d/xfce4-screensaver
-/etc/xdg/autostart/xfce4-screensaver.desktop
-/etc/xdg/menus/xfce4-screensavers.menu
+%{_sysconfdir}/xdg/autostart/xfce4-screensaver.desktop
+%{_sysconfdir}/xdg/menus/xfce4-screensavers.menu
 %attr(755,root,root) %{_bindir}/xfce4-screensaver
 %attr(755,root,root) %{_bindir}/xfce4-screensaver-command
 %attr(755,root,root) %{_bindir}/xfce4-screensaver-configure
@@ -79,3 +80,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/xfce4-screensaver-preferences.1*
 %{_mandir}/man1/xfce4-screensaver.1*
 %{_pixmapsdir}/xfce-logo-white.svg
+%{_iconsdir}/hicolor/*/apps/org.xfce.ScreenSaver.*
