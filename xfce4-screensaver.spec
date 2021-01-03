@@ -4,7 +4,7 @@ Version:	4.16.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/apps/xfce4-screensaver/4.16/%{name}-%{version}.tar.bz2
+Source0:	https://archive.xfce.org/src/apps/xfce4-screensaver/4.16/%{name}-%{version}.tar.bz2
 # Source0-md5:	54d138285a05c9bbc0df63635ba19d4f
 URL:		https://docs.xfce.org/apps/screensaver/start
 BuildRequires:	autoconf >= 2.50
