@@ -1,11 +1,11 @@
 Summary:	Screen saver and locker for Xfce
 Name:		xfce4-screensaver
-Version:	4.18.2
+Version:	4.18.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	https://archive.xfce.org/src/apps/xfce4-screensaver/4.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	b5c0a2ce0dce20cb0297bd106b8a796e
+# Source0-md5:	04c085928cd51c3d652832201091322c
 URL:		https://docs.xfce.org/apps/screensaver/start
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
