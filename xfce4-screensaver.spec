@@ -1,11 +1,11 @@
 Summary:	Screen saver and locker for Xfce
 Name:		xfce4-screensaver
-Version:	4.18.3
+Version:	4.18.4
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	https://archive.xfce.org/src/apps/xfce4-screensaver/4.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	04c085928cd51c3d652832201091322c
+# Source0-md5:	8e1811a3a5382a63b2272953d432c418
 URL:		https://docs.xfce.org/apps/screensaver/start
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -47,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/hy_AM
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{hye,hy_AM}
 
 %find_lang %{name}
 
@@ -62,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/xdg/menus/xfce4-screensavers.menu
 %attr(755,root,root) %{_bindir}/xfce4-screensaver
 %attr(755,root,root) %{_bindir}/xfce4-screensaver-command
-%attr(755,root,root) %{_bindir}/xfce4-screensaver-configure
+%attr(755,root,root) %{_bindir}/xfce4-screensaver-configure.py
 %attr(755,root,root) %{_bindir}/xfce4-screensaver-preferences
 %attr(755,root,root) %{_libexecdir}/xfce4-screensaver-dialog
 %attr(755,root,root) %{_libexecdir}/xfce4-screensaver-gl-helper
