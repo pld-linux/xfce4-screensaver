@@ -52,6 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 %meson_install
 
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{hye,hy_AM}
+%{__rm} -rf $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 
 %find_lang %{name}
 
